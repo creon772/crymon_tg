@@ -155,15 +155,19 @@ async def links(update: Update, context: ContextTypes.DEFAULT_TYPE):
 # ================== ЗАПУСК ==================
 
 def main():
-    app = ApplicationBuilder().token(TOKEN).build()
+    app = ApplicationBuilder().token(TOKEN).concurrent_updates(True).build()
 
     app.add_handler(CommandHandler("start", start))
     app.add_handler(CallbackQueryHandler(faq, pattern="faq"))
     app.add_handler(CallbackQueryHandler(links, pattern="links"))
 
     print("CRYMON bot started...")
-    app.run_polling()
+    app.run_polling(
+    allowed_updates=Update.ALL_TYPES,
+    close_loop=False
+)
 
 if __name__ == "__main__":
     main()
+
 
