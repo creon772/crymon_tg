@@ -14,7 +14,7 @@ import httpx
 
 
 # ================== НАСТРОЙКИ ==================
-IMAGE_PATH = "welcome.png"
+IMAGE_PATH = "welcome.jpg"
 TOKEN = "8476951928:AAEzX20GUdAnsCy46q9qBDx4hzt8J9gK-Ks"
 WEBAPP_URL = "https://crymon-game.onrender.com"
 BACKEND_URL = "https://crymon-game.onrender.com/api/users/create_user"
@@ -178,6 +178,7 @@ import os
 
 if __name__ == "__main__":
     main()
+
 
 
 
