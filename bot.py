@@ -14,7 +14,7 @@ import httpx
 
 
 # ================== НАСТРОЙКИ ==================
-
+IMAGE_PATH = "welcome.png"
 TOKEN = "8476951928:AAEzX20GUdAnsCy46q9qBDx4hzt8J9gK-Ks"
 WEBAPP_URL = "https://crymon-game.onrender.com"
 BACKEND_URL = "https://crymon-game.onrender.com/api/users/create_user"
@@ -76,10 +76,12 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
         ],
     ]
 
-    await update.message.reply_text(
-        text,
-        parse_mode="Markdown",
-        reply_markup=InlineKeyboardMarkup(keyboard),
+    with open(IMAGE_PATH, "rb") as photo:
+        await update.message.reply_photo(
+            photo=photo,
+            caption=text,
+            parse_mode="Markdown",
+            reply_markup=InlineKeyboardMarkup(keyboard),
     )
 
 # ================== FAQ ==================
@@ -176,6 +178,7 @@ import os
 
 if __name__ == "__main__":
     main()
+
 
 
 
