@@ -11,7 +11,7 @@ from telegram.ext import (
     ContextTypes,
 )
 import httpx
-import asyncio
+
 
 # ================== НАСТРОЙКИ ==================
 
@@ -166,3 +166,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
