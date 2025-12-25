@@ -167,12 +167,13 @@ def main():
     close_loop=False
 )
 
-if __name__ == "__main__":
+
 
 import threading
 from http.server import HTTPServer, BaseHTTPRequestHandler
 import os
 
+if __name__ == "__main__":
     main()
 
 
