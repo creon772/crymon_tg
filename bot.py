@@ -162,9 +162,10 @@ def main():
     app.add_handler(CallbackQueryHandler(links, pattern="links"))
 
     print("CRYMON bot started...")
-    app.run_polling(
-    allowed_updates=Update.ALL_TYPES,
-    close_loop=False
+    app.run_webhook(
+    listen="0.0.0.0",
+    port=int(os.environ.get("PORT", 10000)),
+    webhook_url="https://crymon-tg-bot.onrender.com"
 )
 
 
@@ -175,6 +176,7 @@ import os
 
 if __name__ == "__main__":
     main()
+
 
 
 
